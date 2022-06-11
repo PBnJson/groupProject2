@@ -1,0 +1,28 @@
+<div class="card-post">
+  <div class="post-header">
+    {{#if user.image}}
+      <img src="data:image/png;base64,{{user.image}}" class="picture" />
+    {{/if}}
+    {{#unless user.image}}
+      <img src="/img/default.png" class="picture" />
+    {{/unless}}
+    <div class="post-text">
+      <h5 class="card-title">{{user.user_name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">@{{user.email}}</h6>
+    </div>
+  </div>
+  <p id="userpost" class="card-text">{{post}}</p>
+  {{#if isOwned}}
+    <button id="deletebttn" class="buttons" data-id="{{id}}">delete</button>
+  {{/if}}
+</div>
+
+{{! UPLOADING A PICTURE, NEEDS HANDLEBARS I THINK }}
+{{! <form ref="uploadForm"
+id="uploadForm"
+action="http://localhost:3001/upload"
+method="post"
+enctype="multipart/form-data">
+<input type="file" name="sampleFile">
+<input type="submit" value="'Upload!">
+</form> }}
